@@ -2,24 +2,24 @@
 
 namespace JeffersonGoncalves\Filament\Clarity\Pages;
 
-use Filament\Forms\Components\Section;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
 use Filament\Pages\SettingsPage;
+use Filament\Schemas\Components\Section;
+use Filament\Schemas\Schema;
 use JeffersonGoncalves\Clarity\Settings\ClaritySettings;
 
 class ManageClaritySettings extends SettingsPage
 {
     protected static string $settings = ClaritySettings::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-eye';
+    protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-eye';
 
     public static function getNavigationLabel(): string
     {
         return __('filament-clarity::pages.navigation_label');
     }
 
-    public static function getNavigationGroup(): ?string
+    public static function getNavigationGroup(): string|\UnitEnum|null
     {
         return __('filament-clarity::pages.navigation_group');
     }
@@ -29,9 +29,10 @@ class ManageClaritySettings extends SettingsPage
         return __('filament-clarity::pages.title');
     }
 
-    public function form(Form $form): Form
+    public function form(Schema $schema): Schema
     {
-        return $form
+        return $schema
+            ->columns(null)
             ->schema([
                 Section::make(__('filament-clarity::pages.sections.clarity.heading'))
                     ->description(__('filament-clarity::pages.sections.clarity.description'))

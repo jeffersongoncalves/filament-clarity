@@ -6,7 +6,7 @@ Filament plugin for Microsoft Clarity with a settings page powered by Spatie Lar
 
 @verbatim
 <code-snippet name="Install the plugin" lang="bash">
-composer require jeffersongoncalves/filament-clarity:"^1.0"
+composer require jeffersongoncalves/filament-clarity:"^2.0"
 php artisan vendor:publish --tag=clarity-settings-migrations
 php artisan migrate
 </code-snippet>
