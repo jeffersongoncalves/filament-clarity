@@ -1,0 +1,70 @@
+{
+    "name": "jeffersongoncalves/filament-clarity",
+    "description": "Filament plugin for Microsoft Clarity: injects the Clarity tracking tag into your panels and adds a settings page, powered by Spatie Laravel Settings, to manage the project ID.",
+    "keywords": [
+        "jeffersongoncalves",
+        "laravel",
+        "filament",
+        "filament-plugin",
+        "filament-clarity",
+        "clarity",
+        "microsoft-clarity",
+        "heatmaps",
+        "analytics",
+        "spatie-laravel-settings"
+    ],
+    "homepage": "https://github.com/jeffersongoncalves/filament-clarity",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jefferson Gonçalves",
+            "email": "gerson.simao.92@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "filament/filament": "^3.3",
+        "jeffersongoncalves/filament-analytics-core": "^1.0",
+        "jeffersongoncalves/laravel-clarity": "^1.0"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.0",
+        "laravel/pint": "^1.0",
+        "orchestra/testbench": "^10.0",
+        "pestphp/pest": "^3.0",
+        "pestphp/pest-plugin-laravel": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JeffersonGoncalves\\Filament\\Clarity\\": "src"
+        }
+    },
+    "scripts": {
+        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+        "analyse": "vendor/bin/phpstan analyse",
+        "test": "vendor/bin/pest",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JeffersonGoncalves\\Filament\\Clarity\\ClarityServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload-dev": {
+        "psr-4": {
+            "JeffersonGoncalves\\Filament\\Clarity\\Tests\\": "tests"
+        }
+    }
+}
