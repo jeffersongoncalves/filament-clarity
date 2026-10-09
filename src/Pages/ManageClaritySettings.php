@@ -7,6 +7,7 @@ use Filament\Pages\SettingsPage;
 use Filament\Schemas\Components\Section;
 use Filament\Schemas\Schema;
 use JeffersonGoncalves\Clarity\Settings\ClaritySettings;
+use JeffersonGoncalves\FilamentAnalyticsCore\AbstractAnalyticsPlugin;
 
 class ManageClaritySettings extends SettingsPage
 {
@@ -21,7 +22,7 @@ class ManageClaritySettings extends SettingsPage
 
     public static function getNavigationGroup(): string|\UnitEnum|null
     {
-        return __('filament-clarity::pages.navigation_group');
+        return AbstractAnalyticsPlugin::navigationGroupFor('filament-clarity') ?? __('filament-clarity::pages.navigation_group');
     }
 
     public function getTitle(): string
